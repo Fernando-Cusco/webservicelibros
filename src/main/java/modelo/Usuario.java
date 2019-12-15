@@ -2,12 +2,16 @@ package modelo;
 
 import java.util.Date;
 
+import javax.json.bind.annotation.JsonbDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 import org.hibernate.validator.constraints.Email;
 
@@ -28,6 +32,8 @@ public class Usuario {
 	@Column(nullable = false)
 	private int edad;
 	@Column(nullable = false)
+	@Temporal(TemporalType.DATE)
+	@JsonbDateFormat(value = "yyyy-MM-dd")
 	private Date fecha;
 	@Column(nullable = false)
 	private boolean esvalido;

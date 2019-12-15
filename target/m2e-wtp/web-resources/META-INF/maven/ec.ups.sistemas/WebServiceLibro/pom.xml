@@ -89,6 +89,17 @@
 
     <dependencies>
 
+		<dependency>
+	        <groupId>javax.json</groupId>
+	        <artifactId>javax.json-api</artifactId>
+	        <version>1.1</version>
+    	</dependency>
+    	
+    	<dependency>
+           <groupId>javax.json.bind</groupId>
+           <artifactId>javax.json.bind-api</artifactId>
+           <version>1.0</version>
+       </dependency>
         <!-- First declare the APIs we depend on and need for compilation. All 
             of them are provided by JBoss WildFly -->
 
@@ -115,6 +126,7 @@
             <artifactId>jaxrs-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        
 
         <!-- Import the JPA API, we use provided scope as the API is included in 
             JBoss WildFly -->
