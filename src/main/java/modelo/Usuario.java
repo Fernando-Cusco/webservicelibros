@@ -2,14 +2,36 @@ package modelo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.Email;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(nullable = false)
+	@Email
+	private String email;
+	@Column(nullable = false)
 	private String usuario;
+	@Column(nullable = false)
 	private String password;
+	@Column(nullable = false)
 	private int edad;
+	@Column(nullable = false)
 	private Date fecha;
+	@Column(nullable = false)
 	private boolean esvalido;
+	private String imagen;
 	public String getUsuario() {
 		return usuario;
 	}
@@ -46,6 +68,17 @@ public class Usuario {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	
 }
